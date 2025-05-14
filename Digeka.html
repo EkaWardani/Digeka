@@ -28,7 +28,7 @@
 
     .tagline {
       font-size: 1rem;
-      color: #666;
+      color: #0a0a0a;
     }
 
     .menu-toggle {
@@ -93,14 +93,14 @@
       margin: 0.5rem 0;
     }
 
-    .layanan-card button {
+    .layanan-card a {
       margin-top: 1rem;
+      display: inline-block;
       background: #ff3b7d;
       color: white;
-      border: none;
       padding: 0.5rem 1rem;
       border-radius: 20px;
-      cursor: pointer;
+      text-decoration: none;
     }
 
     .portofolio, .blog, .testimoni, .kontak {
@@ -114,28 +114,62 @@
       margin-bottom: 1rem;
     }
 
-    .portfolio-item, .blog-post {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+    .portfolio-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 30px;
+    }
+
+    .portfolio-item img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .portfolio-text {
+      max-width: 600px;
+    }
+
+    .blog-post {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 2rem;
+    }
+
+    .blog-post img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
     .btn {
-      display: inline-block;
-      margin-top: 0.5rem;
       background: #ff3b7d;
-      color: white;
+      color: #ffe0eb;
+      padding: 0.5rem 1rem;
       border: none;
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
+      border-radius: 5px;
       text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
     }
 
-    .testimoni p {
-      text-align: center;
-      font-style: italic;
+    .testimoni img {
+      width: 200px;
+      height: 280px;
+      object-fit: cover;
+      border-top-left-radius: 80px;
+      border-top-right-radius: 80px;
+    }
+
+    .testimoni-text {
+      background-color: white;
+      padding: 20px;
+      max-width: 500px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .kontak form {
@@ -147,66 +181,61 @@
     }
 
     .kontak input, .kontak textarea {
-      padding: 0.5rem;
-      border-radius: 5px;
+      padding: 10px;
+      border-radius: 10px;
       border: none;
+      background-color: #e76491;
+      color: white;
     }
 
     .kontak button {
-      background: #ff3b7d;
+      padding: 10px;
+      background-color: #9c2c5a;
       color: white;
       border: none;
-      padding: 0.7rem;
-      border-radius: 20px;
+      border-radius: 10px;
       cursor: pointer;
-    }
-
-    .sosial {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 1.5rem;
     }
 
     footer {
       text-align: center;
-      margin-top: 2rem;
-      padding: 1rem 0;
+      padding: 1rem;
       background: #ffbad2;
       font-size: 0.9rem;
+      margin-top: 2rem;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         display: none;
       }
-
       nav.active {
         display: flex;
       }
-
       .menu-toggle {
         display: block;
+      }
+      .portfolio-item, .blog-post {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
   <script>
-    // Toggle menu
     function toggleMenu() {
       document.querySelector('nav').classList.toggle('active');
     }
   </script>
 </head>
 <body>
-
   <header class="navbar">
     <div class="logo-area">
-      <img src="C:\Users\Lenovo\Downloads\Logo Digeka.png" width="200" height="100" alt="Logo">
+      <img src="Logo Digeka.png" width="200" height="100" alt="Logo">
       <div class="tagline">Solusi Digital Untuk Bisnis Anda</div>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  </header>  
+  </header>
   <nav>
     <a href="#">Beranda</a>
     <a href="#layanan">Layanan</a>
@@ -216,9 +245,9 @@
   </nav>
 
   <section class="hero">
-    <img src="C:\Users\Lenovo\Downloads\thumbnail digimar.jpg" alt="Digital Marketing" class="hero-image">
+    <img src="thumbnail digimar.jpg" alt="Digital Marketing" class="hero-image">
     <div class="hero-text">
-      <img src="C:\Users\Lenovo\Downloads\Profil_Web.png" alt="Putri Eka" class="putri-image">
+      <img src="Profil_Web.png" alt="Putri Eka" class="putri-image">
       <p>Hai..Saya Putri Eka Wardani. Seorang Digital Marketer pemula yang haus akan ilmu dan akan terus belajar dalam menciptakan konten pemasaran digital yang menarik untuk meningkatkan visibilitas online dan mencapai target pemasaran Anda. Saya sedang mencari peluang untuk meningkatkan skill dan minat saya di era digital sekarang ini.</p>
     </div>
   </section>
@@ -229,22 +258,22 @@
       <div class="layanan-card">
         <h3>Social Media Management</h3>
         <p>Miliki social media yang relevan dengan market Anda.</p>
-        <a href="tel:+6285398445434" class="button-pink" style="background-color: #ff3b7d; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none;">Hubungi Kami</a>
+        <a href="tel:+6285398445434">Hubungi Kami</a>
       </div>
       <div class="layanan-card">
         <h3>Content Creation</h3>
         <p>Produksi segala kebutuhan pembuatan video untuk brand Anda.</p>
-        <a href="tel:+6285398445434" class="button-pink" style="background-color: #ff3b7d; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none;">Hubungi Kami</a>
+        <a href="tel:+6285398445434">Hubungi Kami</a>
       </div>
       <div class="layanan-card">
         <h3>Email Marketing</h3>
         <p>Buat Kampanye Iklan seperti Buletin atau Promosi.</p>
-        <a href="tel:+6285398445434" style="background-color: #ff3b7d; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none;">Hubungi Kami</a>
+        <a href="tel:+6285398445434">Hubungi Kami</a>
       </div>
       <div class="layanan-card">
         <h3>SEO</h3>
         <p>Membantu bisnis Anda meningkatkan visibilitas online pada kolom pencarian.</p>
-        <a href="tel:+6285398445434" style="background-color: #ff3b7d; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none;">Hubungi Kami</a>
+        <a href="tel:+6285398445434">Hubungi Kami</a>
       </div>
     </div>
   </section>
@@ -252,89 +281,73 @@
   <section class="portofolio" id="portofolio">
     <h2>PORTOFOLIO</h2>
     <div class="portfolio-item">
-      <h3>Social Media Management</h3>
-      <img src="C:\Users\Lenovo\Downloads\Beranda_Fanzy.png" alt="Fanzy Media" width="350" height="350">
-      <p>Merancang dan mengelola akun media sosial “Fanzy”, termasuk penjadwalan posting, peningkatan visibilitas merek dan interaksi dengan audiens.</p>
+      <img src="porto_3-removebg-preview.png" alt="Fanzy Media">
+      <div class="portfolio-text">
+        <h3>Social Media Management</h3>
+        <p>Merancang dan mengelola akun media sosial “Fanzy”, termasuk penjadwalan posting, peningkatan visibilitas merek dan interaksi dengan audiens.</p>
+      </div>
     </div>
     <div class="portfolio-item">
-      <h3>Content Creation</h3>
-      <img src="C:\Users\Lenovo\Downloads\fanzy_1.png" alt="Fanzy Content" width="350" height="350">
-      <p>Membuat konten yang berfokus pada visual menarik termasuk untuk foto, produk, dan video pendek serta penyesuaian konten berdasarkan trend yang berkembang.</p>
+      <img src="fanzy_3-removebg-preview.png" alt="Fanzy Content">
+      <div class="portfolio-text">
+        <h3>Content Creation</h3>
+        <p>Membuat konten yang berfokus pada visual menarik termasuk untuk foto, produk, dan video pendek serta penyesuaian konten berdasarkan trend yang berkembang.</p>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <img src="porto_2-removebg-preview.png" alt="Fanzy Visual Design">
+      <div class="portfolio-text">
+        <h3>Visual Design</h3>
+        <p>Mendesain elemen visual yang komprehensif dari tampilan website Budget Tracker agar tampilannya menarik yang tidak hanya estetis tetapi juga fungsional.</p>
+      </div>
     </div>
   </section>
 
   <section class="blog" id="blog">
     <h2>BLOG</h2>
     <div class="blog-post">
-      <h3>Best Email Marketing Campaigns of 2025</h3>
-      <p>Pemasaran email bisa terasa seperti pertempuran yang berat tetapi, 
-        ketika dilakukan dengan benar, itu adalah pengubah permainan.</p>
-      <img src="C:\Users\Lenovo\OneDrive\Documents\blog 1.jpg" alt="Email Campaign" width="200" height="200">
-      <a href="https://neilpatel.com/blog/email-marketing-companies-2/" target="_blank" class="btn">Selengkapnya</a>
+      <img src="blog 1.jpg" alt="Email Campaign">
+      <div>
+        <h3>Best Email Marketing Campaigns of 2025</h3>
+        <p>Pemasaran email bisa terasa seperti pertempuran yang berat tetapi, ketika dilakukan dengan benar, itu adalah pengubah permainan.</p>
+        <a class="btn" href="https://neilpatel.com/blog/email-marketing-companies-2/" target="_blank">Selengkapnya</a>
+      </div>
     </div>
     <div class="blog-post">
-      <h3>Best SEO Plugins for WordPress</h3>
-      <p>Anda dapat menggunakan pilihan plugin WordPress SEO untuk blog Anda,
-         meningkatkan kualitas dan kuantitas lalu lintas situs web.</p>
-      <img src="C:\Users\Lenovo\OneDrive\Documents\blog 2.jpg" alt="SEO Plugin" width="200" height="200">
-      <a href="https://neilpatel.com/blog/best-seo-plugins-for-wordpress/" target="_blank" class="btn">Selengkapnya</a>
+      <img src="blog 2.jpg" alt="SEO Plugin">
+      <div>
+        <h3>Best SEO Plugins for WordPress</h3>
+        <p>Anda dapat menggunakan pilihan plugin WordPress SEO untuk blog Anda, meningkatkan kualitas dan kuantitas lalu lintas situs web.</p>
+        <a class="btn" href="https://neilpatel.com/blog/best-seo-plugins-for-wordpress/" target="_blank">Selengkapnya</a>
+      </div>
     </div>
   </section>
 
-  <section style="background-color: #ffe6ef; padding: 50px; font-family: sans-serif;">
-    <h2 style="font-size: 28px; color: #000; margin-bottom: 20px;">Apa yang Pelanggan Katakan ?</h2>
-    
+  <section class="testimoni">
+    <h2>Apa yang Pelanggan Katakan?</h2>
     <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
-      
-      <div style="width: 200px; height: 280px; background-color: #ddd; border-top-left-radius: 80px; border-top-right-radius: 80px; overflow: hidden;">
-        <img src="C:\Users\Lenovo\Downloads\florist-lokal-1.jpg" alt="User" 
-             style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
+      <div>
+        <img src="florist-lokal-1.jpg" alt="User">
       </div>
-
-      <div style="background-color: white; padding: 20px; max-width: 500px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-        <p style="margin: 0 0 15px; font-size: 14px; color: #222;">
-          “Saya sangat sibuk mengurus toko, jadi tidak punya waktu untuk media sosial. Digeka sangat membantu! 
-          Mereka mengelola semua postingan, interaksi dengan pelanggan, dan bahkan membuat promosi khusus. 
-          Hasilnya, toko kami semakin dikenal dan penjualan pun meningkat.”
-        </p>
-        <p style="font-weight: bold; font-size: 14px;">Chelsea, Owner Lova Florist</p>
+      <div class="testimoni-text">
+        <p>“Saya sangat sibuk mengurus toko, jadi tidak punya waktu untuk media sosial. Digeka sangat membantu! Mereka mengelola semua postingan, interaksi dengan pelanggan, dan bahkan membuat promosi khusus. Hasilnya, toko kami semakin dikenal dan penjualan pun meningkat.”</p>
+        <p><strong>Chelsea, Owner Lova Florist</strong></p>
       </div>
-      
     </div>
-</section>
+  </section>
 
-</body>
-</html>
-
-  <div style="max-width: 500px;">
-    <h2 style="font-size: 24px; color: black; margin-bottom: 10px;">
-      Tertarik Untuk <br>
-      Konsultasi Dengan <br>
-      Digeka?
-    </h2>
-
-    <p style="font-size: 14px; color: black; margin-bottom: 30px;">
-      Kami di sini untuk memberikan Anda layanan terbaik. Jangan ragu untuk menghubungi kami jika ada pertanyaan ataupun saran. Klik di sini untuk menambahkan teks Anda sendiri.
-    </p>
-
+  <section class="kontak" id="kontak">
+    <h2>Tertarik Untuk Konsultasi Dengan Digeka?</h2>
+    <p style="text-align: center;">Kami di sini untuk memberikan Anda layanan terbaik. Jangan ragu untuk menghubungi kami jika ada pertanyaan ataupun saran.</p>
     <form>
-      <label style="font-weight: bold;">Nama :</label><br>
-      <input type="text" style="width: 100%; padding: 10px; margin: 5px 0 20px 0; border: none; border-radius: 10px; background-color: #e75c88;"><br>
+  <input type="text" name="nama" placeholder="Nama" style="color: rgb(11, 10, 10);">
+  <input type="email" name="email" placeholder="Email" style="color: rgb(11, 11, 11);">
+  <textarea name="pesan" rows="4" placeholder="Pesan" style="color: rgb(11, 10, 10);"></textarea>
+  <button type="submit" style="color: white;">Kirim</button>
+</form>
 
-      <label style="font-weight: bold;">Email :</label><br>
-      <input type="email" style="width: 100%; padding: 10px; margin: 5px 0 20px 0; border: none; border-radius: 10px; background-color: #e75c88;"><br>
-
-      <label style="font-weight: bold;">Pesan :</label><br>
-      <textarea rows="5" style="width: 100%; padding: 10px; margin: 5px 0 20px 0; border: none; border-radius: 10px; background-color: #e75c88; resize: none;"></textarea><br>
-
-      <button type="submit" style="background-color: #b8345c; color: white; border: none; padding: 8px 20px; border-radius: 8px; cursor: pointer;">Kirim</button>
-    </form>
-  </div>
-
-</body>
-</html>
-
-  <meta charset="UTF-8">
+  </section>
+<meta charset="UTF-8">
   <title>Footer Digeka</title>
 </head>
 <body style="margin: 0; padding: 0; background-color: #ffe6ee; font-family: 'Poppins', sans-serif;">
