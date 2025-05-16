@@ -84,64 +84,58 @@
       color: #e83068;
     }
 
-    /* Gaya untuk section hero */
-.hero {
-  background-color: #ffe3ec;
-  padding: 20px;
-}
+    .hero {
+      text-align: center;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.hero-image {
-  width: 100%;       /* agar memenuhi lebar container */
-  height: auto;      /* otomatis menyesuaikan tinggi agar proporsi terjaga */
-  border-radius: 12px;
-  margin-bottom: 20px;
-  object-fit: contain; /* agar gambar tidak terpotong */
-}
+    .hero-image {
+      width: 70%;
+      max-width: 600px;
+      height: auto;
+      margin-bottom: 30px;
+    }
 
-.hero-text {
-  display: flex;
-  align-items: center; /* ini yang bikin teks vertikal tengah */
-  gap: 20px;
-  max-width: 900px;
-  margin: auto;
-  /* jangan pakai flex-wrap agar tidak turun ke bawah */
-  /* kalau mau turun ke bawah di mobile, pakai media query */
-}
+    .hero-text {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      max-width: 900px;
+      text-align: left;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-.putri-image {
-  width: 200px;
-  border-radius: 20px;
-  flex-shrink: 0; /* supaya foto tidak mengecil */
-}
+    .putri-image {
+      width: 150px;
+      height: auto;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
 
-.profil-text {
-  max-width: 1000px;
-}
+    .hero-text div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-/* Margin antar paragraf */
-.profil-text p {
-  margin: 10px 0;
-  font-family: 'Fira Code', monospace;
+    .hero-text p:first-child {
+      margin: 0 0 15px 0;
+      font-size: 24px;
+      font-family: 'Fira Code', monospace;
+      font-weight: bold;
+      color: #ff3b7d;
+    }
+
+    .hero-text p:nth-child(2) {
+      margin: 0 0 15px 0;
       font-size: 18px;
-}
-
-/* Responsive: di layar kecil, teks di bawah dan center */
-@media (max-width: 600px) {
-  .hero-text {
-    flex-direction: column;
-    text-align: center;
-    align-items: center; /* biar teks juga tengah */
-  }
-
-  .putri-image {
-    width: 150px; /* ukuran lebih kecil di HP */
-    margin-bottom: 15px;
-  }
-
-  .profil-text {
-    max-width: 200%;
-  }
-}
+      line-height: 1.6;
+    }
 
     .icon-bar i {
       font-size: 26px;
@@ -321,7 +315,7 @@
     }
 
     footer {
-      text-align: center;
+      text-align: left;
       padding: 1rem;
       background: #ffbad2;
       font-size: 1rem;
@@ -389,7 +383,7 @@
   </header>
 
   <nav>
-    <a href="#beranda">Beranda</a>
+    <a href="#">Beranda</a>
     <a href="#layanan">Layanan</a>
     <a href="#portofolio">Portofolio</a>
     <a href="#blog">Blog</a>
@@ -400,17 +394,21 @@
     <img src="thumbnail digimar.jpg" alt="Digital Marketing" class="hero-image" />
     <div class="hero-text">
       <img src="Profil_Web.png" alt="Putri Eka" class="putri-image" />
-
-    <div class="profil-text">
-      <p><strong>HAIII...</strong></p>
-      <p>
-        Saya Putri Eka Wardani, seorang Digital Marketer pemula yang haus akan ilmu dan akan terus belajar dalam menciptakan konten pemasaran digital yang menarik untuk meningkatkan visibilitas online dan mencapai target pemasaran Anda. Saya sedang mencari peluang untuk meningkatkan skill dan minat saya di era digital sekarang ini.
-      </p>
+      <div>
+        <p>Hello...</p>
+        <p>
+          Saya Putri Eka Wardani, seorang Digital Marketer pemula yang haus akan ilmu dan akan terus belajar dalam menciptakan konten pemasaran digital yang menarik untuk meningkatkan visibilitas online dan mencapai target pemasaran Anda. Saya sedang mencari peluang untuk meningkatkan skill dan minat saya di era digital sekarang ini.
+        </p>
+        <div class="icon-bar">
+          <i class="fab fa-instagram"></i>
+          <i class="fas fa-envelope"></i>
+          <i class="fas fa-phone"></i>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="layanan" class="layanan">
+ <section id="layanan" class="layanan">
   <h2>Layanan</h2>
   <div class="layanan-grid">
     <div class="layanan-card">
@@ -431,7 +429,7 @@
   </div>
 </section>
 
-  <section id="portofolio" class="portofolio">
+ <section id="portofolio" class="portofolio">
   <h2>Portofolio</h2>
 
   <div class="portfolio-item">
@@ -481,7 +479,7 @@
       <img src="florist-lokal-1.jpg" alt="Putri Eka" />
       <div class="testimoni-text">
         <p>"Saya sangat sibuk mengurus toko, jadi tidak punya waktu untuk media sosial. Digeka sangat membantu! Mereka mengelola semua postingan, interaksi dengan pelanggan, dan bahkan membuat promosi khusus. Hasilnya, toko kami semakin dikenal dan penjualan pun meningkat."</p>
-        <p><strong>Chelsea, Owner Lova Florist</strong></p>
+        <p></strong>Chelsea, Owner Lova Florist</strong></p>
       </div>
     </div>
   </section>
